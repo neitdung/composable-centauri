@@ -6,7 +6,6 @@ import (
 	errorsmod "cosmossdk.io/errors"
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-
 	"github.com/cosmos/cosmos-sdk/x/authz"
 	clienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
 	tfmwKeeper "github.com/notional-labs/centauri/v3/x/transfermiddleware/keeper"
@@ -64,7 +63,6 @@ func (g IBCPermissionDecorator) validMsg(ctx sdk.Context, m sdk.Msg) error {
 		if msg.ClientMessage.TypeUrl == "/ibc.lightclients.wasm.v1.Header" && !g.tfmwKeeper.HasAllowRlyAddress(ctx, msg.Signer) {
 			return fmt.Errorf("permission denied, address %s don't have relay permission", msg.Signer)
 		}
-
 	}
 
 	return nil

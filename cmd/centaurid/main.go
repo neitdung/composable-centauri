@@ -4,7 +4,6 @@ import (
 	"os"
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
-
 	"github.com/notional-labs/centauri/v3/app"
 	cmd "github.com/notional-labs/centauri/v3/cmd/centaurid/cmd"
 	cmdcfg "github.com/notional-labs/centauri/v3/cmd/centaurid/config"
